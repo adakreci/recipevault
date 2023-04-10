@@ -29,10 +29,10 @@ public class RecipeSpecificationQueryService {
         };
     }
 
-    private void handleSameFields( final RecipeRequest request,
-                                   Root<Recipe> root,
-                                   CriteriaBuilder criteriaBuilder,
-                                   List<Predicate> predicates ) {
+    void handleSameFields( final RecipeRequest request,
+                           Root<Recipe> root,
+                           CriteriaBuilder criteriaBuilder,
+                           List<Predicate> predicates ) {
         Optional.ofNullable( request.getVegetarian() )
                 .ifPresent( vegetarian -> predicates.add( criteriaBuilder.equal( root.get( "vegetarian" ), vegetarian ) ) );
         Optional.ofNullable( request.getServings() )
@@ -42,10 +42,10 @@ public class RecipeSpecificationQueryService {
                 .ifPresent( searchKey -> predicates.add( criteriaBuilder.like( root.get( "instructions" ), "%" + searchKey + "%" ) ) );
     }
 
-    private void handleIngredients( final RecipeRequest request,
-                                    Root<Recipe> root,
-                                    CriteriaBuilder criteriaBuilder,
-                                    List<Predicate> predicates ) {
+    void handleIngredients( final RecipeRequest request,
+                            Root<Recipe> root,
+                            CriteriaBuilder criteriaBuilder,
+                            List<Predicate> predicates ) {
         Predicate ingredientPredicate = Optional.ofNullable( request.getExcludeIngredients() )
                                                 .map( Collection::stream )
                                                 .orElse( Stream.empty() )

@@ -8,7 +8,6 @@ import com.abnamro.recipevault.request.RecipeRequest;
 import com.abnamro.recipevault.response.RecipeResponse;
 import com.abnamro.recipevault.response.RecipeValidationException;
 import lombok.AllArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -87,7 +86,7 @@ public class RecipeService {
         return recipeMapper.map(recipeOptional.get());
     }
 
-    private List<RecipeDTO> findAll() {
-        return recipeMapper.map(recipeRepository.findAll());
+    public List<RecipeDTO> findAll() {
+        return recipeMapper.map( recipeRepository.findAll() );
     }
 }
