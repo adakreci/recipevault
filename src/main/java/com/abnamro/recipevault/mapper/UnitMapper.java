@@ -1,7 +1,7 @@
 package com.abnamro.recipevault.mapper;
 
-import com.abnamro.recipevault.util.IngredientUnit;
-import com.abnamro.recipevault.util.MeasureUnit;
+import com.abnamro.recipevault.domain.IngredientUnit;
+import com.abnamro.recipevault.domain.MeasureUnit;
 import org.mapstruct.EnumMapping;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

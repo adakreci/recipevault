@@ -17,7 +17,7 @@ import java.util.Set;
 public class RecipeDTO {
 
     @ApiModelProperty(value = "id for recipe")
-    private Long rid;
+    private Long recipeId;
 
     @ApiModelProperty(value = "name of the recipe")
     private String name;

@@ -21,7 +21,7 @@ public class Ingredient {
     @Id
     @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long iid;
+    private Long ingredientId;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

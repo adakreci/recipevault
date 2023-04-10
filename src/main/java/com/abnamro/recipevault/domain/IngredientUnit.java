@@ -1,4 +1,4 @@
-package com.abnamro.recipevault.util;
+package com.abnamro.recipevault.domain;
 
 public enum IngredientUnit {
     KG, GR, MG

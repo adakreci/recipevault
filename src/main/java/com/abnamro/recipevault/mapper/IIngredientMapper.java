@@ -12,17 +12,17 @@ import java.util.Set;
 @Mapper(uses = {UnitMapper.class})
 public interface IIngredientMapper {
 
-    @Mapping(target = "iid", source = "ingredient.iid")
+    @Mapping(target = "ingredientId", source = "ingredient.ingredientId")
     @Mapping(target = "name", source = "ingredient.name")
     @Mapping(target = "healthBenefit", source = "ingredient.healthBenefit")
     IngredientDTO mapToDTO( final RecipeIngredient recipe);
 
-    @Mapping(target = "ingredient.iid", source = "iid")
+    @Mapping(target = "ingredient.ingredientId", source = "ingredientId")
     @Mapping(target = "ingredient.name", source = "name")
     @Mapping(target = "ingredient.healthBenefit", source = "healthBenefit")
     RecipeIngredient mapToDomain(final IngredientDTO recipe);
 
-    @Mapping(target = "ingredient.iid", source = "iid")
+    @Mapping(target = "ingredient.ingredientId", source = "ingredientId")
     @Mapping(target = "ingredient.name", source = "name")
     @Mapping(target = "ingredient.healthBenefit", source = "healthBenefit")
     Set<RecipeIngredient> mapToDomains(final Set<IngredientDTO> recipes);

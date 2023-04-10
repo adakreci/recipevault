@@ -1,6 +1,6 @@
 package com.abnamro.recipevault.dto;
 
-import com.abnamro.recipevault.util.MeasureUnit;
+import com.abnamro.recipevault.domain.MeasureUnit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ public class IngredientDTO {
     private Long id;
 
     @ApiModelProperty(value = "id for ingredient")
-    private Long iid;
+    private Long ingredientId;
 
     @ApiModelProperty(value = "name for ingredient")
     private String name;

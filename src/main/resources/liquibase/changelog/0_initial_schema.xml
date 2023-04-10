@@ -24,7 +24,7 @@
         </preConditions>
 
         <createTable tableName="recipe">
-            <column name="rid" type="bigint" autoIncrement="${autoIncrement}" remarks="The recipe primary key">
+            <column name="recipeId" type="bigint" autoIncrement="${autoIncrement}" remarks="The recipe primary key">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="created_date" type="datetime" remarks="The creation date and time for the recipe entry"/>
@@ -37,7 +37,7 @@
         </createTable>
 
         <createTable tableName="ingredient">
-            <column name="iid" type="bigint" autoIncrement="${autoIncrement}" remarks="The ingredient primary key">
+            <column name="ingredientId" type="bigint" autoIncrement="${autoIncrement}" remarks="The ingredient primary key">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="created_date" type="datetime" remarks="The creation date and time for the ingredient entry"/>
@@ -51,28 +51,28 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}" remarks="The ingredient primary key">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="rid" type="bigint" remarks="Foreign key; The recipe primary key">
+            <column name="recipeId" type="bigint" remarks="Foreign key; The recipe primary key">
                 <constraints nullable="false" />
             </column>
-            <column name="iid" type="bigint" remarks="Foreign key; The ingredient primary key">
+            <column name="ingredientId" type="bigint" remarks="Foreign key; The ingredient primary key">
                 <constraints nullable="false" />
             </column>
             <column name="measure" type="double" remarks="The measure of the ingredient for the recipe"/>
             <column name="unit" type="varchar(20)" remarks="The unit of the measure of the ingredient"/>
         </createTable>
 
-        <addForeignKeyConstraint baseColumnNames="rid"
+        <addForeignKeyConstraint baseColumnNames="recipeId"
                                  baseTableName="recipe_ingredient"
                                  constraintName="fk1_recipe_ingredient"
-                                 referencedColumnNames="rid"
+                                 referencedColumnNames="recipeId"
                                  referencedTableName="Recipe"
                                  onUpdate="CASCADE"
                                  onDelete="CASCADE"/>
 
-        <addForeignKeyConstraint baseColumnNames="iid"
+        <addForeignKeyConstraint baseColumnNames="ingredientId"
                                  baseTableName="recipe_ingredient"
                                  constraintName="fk2_recipe_ingredient"
-                                 referencedColumnNames="iid"
+                                 referencedColumnNames="ingredientId"
                                  referencedTableName="Ingredient"
                                  onUpdate="CASCADE"
                                  onDelete="CASCADE"/>

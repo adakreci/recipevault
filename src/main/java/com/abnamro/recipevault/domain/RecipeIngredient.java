@@ -1,6 +1,5 @@
 package com.abnamro.recipevault.domain;
 
-import com.abnamro.recipevault.util.IngredientUnit;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +23,7 @@ public class RecipeIngredient {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "iid", referencedColumnName = "iid")
+    @JoinColumn(name = "ingredientId", referencedColumnName = "ingredientId")
     private Ingredient ingredient;
 
     @Column

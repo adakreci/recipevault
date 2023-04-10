@@ -25,7 +25,7 @@ public class Recipe {
     @Id
     @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rid;
+    private Long recipeId;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -44,6 +44,6 @@ public class Recipe {
     private Boolean vegetarian;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "rid", nullable = false)
+    @JoinColumn(name = "recipeId", nullable = false)
     private Set<RecipeIngredient> ingredients = new HashSet<>();
 }
