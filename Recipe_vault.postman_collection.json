@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "b97af8c2-16fc-4dca-89b4-8f26f11d8900",
+    "name": "Recipe_vault",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create a new recipe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"The first recipe 2\",\r\n    \"instructions\": \"The instructions for the first recipe 1\",\r\n    \"servings\": 1,\r\n    \"vegetarian\": true,\r\n    \"ingredients\": [\r\n        {\r\n            \"iid\": 2,\r\n            \"measure\": 1.0,\r\n            \"unit\": \"GR_UNIT\"\r\n        },\r\n        {\r\n            \"iid\": 1,\r\n            \"measure\": 1.0,\r\n            \"unit\": \"MG_UNIT\"\r\n        }\r\n\r\n    ]\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/recipes/add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "recipes",
+            "add"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update existing recipe",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rid\": 1,\r\n    \"name\": \"The first recipe 1 update\",\r\n    \"instructions\": \"The instructions for the first recipe 1 update\",\r\n    \"servings\": 5,\r\n    \"vegetarian\": false,\r\n    \"ingredients\": [\r\n        {\r\n            \"iid\": 2,\r\n            \"measure\": 0.5,\r\n            \"unit\": \"MG_UNIT\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/recipes/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "recipes",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get specific recipe by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/recipes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "recipes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a specific recipie by id",
+      "request": {
+        "method": "DELETE",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Search with params",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/recipes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "recipes"
+          ],
+          "query": [
+            {
+              "key": "vegetarian",
+              "value": "true",
+              "disabled": true
+            },
+            {
+              "key": "servings",
+              "value": "3",
+              "disabled": true
+            },
+            {
+              "key": "searchKey",
+              "value": null,
+              "disabled": true
+            },
+            {
+              "key": "includeIngredients",
+              "value": "Ingredient 1",
+              "disabled": true
+            },
+            {
+              "key": "excludeIngredients",
+              "value": "Ingredient 1",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
